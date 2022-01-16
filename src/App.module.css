@@ -1,0 +1,19 @@
+.wrap{
+    display: flex;
+    justify-content: center;
+}
+.usersStyle{
+    background: silver;
+    width: 40%;
+    padding: 5px;
+}
+.userDetails{
+    background-color: cornflowerblue;
+    padding: 5px;
+    width: 50%;
+}
+.usersPosts{
+    width: 40%;
+    padding: 5px;
+    margin-left: 66px;
+}
