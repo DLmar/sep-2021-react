@@ -1,0 +1,23 @@
+.header{
+    min-height: 60px;
+    background-color: midnightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.header a {
+    font-size: 25px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.header a[class='active']{
+    text-decoration: underline;
+    color: cyan;
+}
+
+.outlet {
+    width: 95%;
+    margin: 0 auto;
+}
