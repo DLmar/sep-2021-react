@@ -5,7 +5,7 @@ const Post = ({post}) => {
     return (
         <div>
             {id}) {title}
-            <Link to={id.toString()}>
+            <Link to={id.toString()} state={post}>
                 <button>PostsDetails</button>
             </Link>
         </div>

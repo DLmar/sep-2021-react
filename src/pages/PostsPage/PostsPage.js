@@ -2,6 +2,7 @@ import {Outlet} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {postsService} from "../../services/posts.service";
 import Post from "../../components/Post/Post";
+import css from './PostsPage.module.css'
 
 
 const PostsPage = () => {
@@ -11,9 +12,9 @@ const PostsPage = () => {
     },[])
 
     return (
-        <div>
+        <div className={css.flex_posts}>
             <div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>
-            <Outlet/>
+            <div className={css.postOfUser}><Outlet/></div>
         </div>
     );
 };

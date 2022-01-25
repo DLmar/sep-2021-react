@@ -3,7 +3,7 @@ import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 import {usersService} from "../../services/users.service"
 import css from './UsersDetailsPage.module.css'
 
-const UserDetailsPage = () => {
+const UserDetailsPage = ({post}) => {
     const {id} = useParams();
     const [user, setUser] = useState(null);
     
@@ -38,7 +38,8 @@ const UserDetailsPage = () => {
                         <p className={css.xd}>Name : {user.company.name}</p>
                         <p className={css.xd}>CatchPhrase : {user.company.catchPhrase}</p>
                         <p className={css.xd}>Bs : {user.company.bs}</p>
-                        <Link to={id.toString()} state={user}>
+
+                        <Link to={`${id.toString()}/posts`}>
                             <button>Posts</button>
                         </Link>
                     </div>

@@ -1,0 +1,7 @@
+.flex_posts{
+    display: flex;
+}
+.postOfUser{
+    width: 30%;
+    margin-left: 300px;
+}

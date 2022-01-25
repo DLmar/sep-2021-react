@@ -15,7 +15,7 @@ const UserPostsPage = () => {
             setPost(state)
             return
         }
-        postsService.getAll(id).then(value => setPost(...{value}));
+        postsService.getById(id).then(value => setPost(...{value}));
     }, [id])
     return (
         <div>
