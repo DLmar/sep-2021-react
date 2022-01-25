@@ -13,7 +13,7 @@ const PostsPage = () => {
     return (
         <div>
             <div>{posts.map(post => <Post key={post.id} post={post}/>)}</div>
-            <div><Outlet/></div>
+            <Outlet/>
         </div>
     );
 };

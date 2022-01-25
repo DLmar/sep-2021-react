@@ -5,7 +5,7 @@ const Post = ({post}) => {
     return (
         <div>
             {id}) {title}
-            <Link>
+            <Link to={id.toString()}>
                 <button>PostsDetails</button>
             </Link>
         </div>
