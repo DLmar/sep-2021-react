@@ -22,8 +22,8 @@ const PostsDetailsPage = () => {
             {post && (
                 <div>
                     <h4>Id: {post.id}</h4>
-                    <p>Name: {post.name}</p>
-                    <p>Email: {post.email}</p>
+                    <p>UserId: {post.userId}</p>
+                    <i>Email: {post.title}</i>
                     <p>Body: {post.body}</p>
                     <Link path to={id.toString()} state={post}>
                         <button>Comments</button>

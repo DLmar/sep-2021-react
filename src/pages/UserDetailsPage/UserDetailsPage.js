@@ -39,9 +39,11 @@ const UserDetailsPage = ({post}) => {
                         <p className={css.xd}>CatchPhrase : {user.company.catchPhrase}</p>
                         <p className={css.xd}>Bs : {user.company.bs}</p>
 
-                        <Link to={`${id.toString()}/posts`}>
-                            <button>Posts</button>
-                        </Link>
+                        <div className={css.xxx}>
+                            <Link to={`${id.toString()}/posts`}>
+                                <button className={css.btn}>Posts</button>
+                            </Link>
+                        </div>
                     </div>
                 )
             }

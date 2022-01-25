@@ -15,14 +15,14 @@ const UserPostsPage = () => {
             setPost(state)
             return
         }
-        postsService.getById(id).then(value => setPost(...{value}));
+        postsService.getPosts(id).then(value => setPost(...{value}));
     }, [id])
     return (
         <div>
             {post && (
                 <div>
-                    <p>id: {post.id}</p>
-                    <p>Name: {post.name}</p>
+                    <p>Id: {post.id}</p>
+                    <p>UserId: {post.id}</p>
                     <p>Title: {post.title}</p>
                     <p>Body: {post.body}</p>
                 </div>
