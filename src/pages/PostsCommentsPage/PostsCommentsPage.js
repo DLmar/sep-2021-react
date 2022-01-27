@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
-import {postsService} from "../../services/posts.service";
 import Comment from "../../components/Comment/Comment";
-import {Outlet} from "react-router-dom";
 import {commentsService} from "../../services/comments.service";
 
+
 const PostsCommentsPage = () => {
+    const {id} = useParams();
     const [comments,setComments] = useState([]);
     const {state} = useLocation();
-    const {id} = useParams();
+
 
     useEffect(()=>{
         if (state){
@@ -17,7 +17,6 @@ const PostsCommentsPage = () => {
         }
        commentsService.getById(id).then(value => setComments([...value]));
     },[id])
-
 
     return (
         <div>

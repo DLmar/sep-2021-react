@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '../Post2/Post2.module.css'
 const Comment = ({comment}) => {
-    const {postId,id,name,email,body} = comment;
+    const {id,postId,name,email,body} = comment;
     return (
         <div className={css.block}>
             <h4>Id: {id}</h4>

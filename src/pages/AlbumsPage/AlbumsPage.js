@@ -7,14 +7,8 @@ const AlbumsPage = () => {
     const {id} = useParams()
     const [albums,setAlbums] = useState(null);
 
-    const state = useLocation();
-
     useEffect(()=>{
-        if (state){
-            setAlbums(state)
-            return
-        }
-        albumsService.getAlbums(id).then(value => setAlbums({...value}))
+        albumsService.getAlbums(id).then(value => setAlbums([...value]))
     },[id])
 console.log(albums)
     return (

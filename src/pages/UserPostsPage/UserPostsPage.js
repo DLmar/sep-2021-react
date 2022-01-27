@@ -19,6 +19,7 @@ const UserPostsPage = () => {
     return (
         <div>
             {post.map (post =>  <Post2 key={post.id} post={post}/>)}
+            <Outlet/>
         </div>
     );
 };

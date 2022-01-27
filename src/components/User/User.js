@@ -1,6 +1,6 @@
 import css from './User.module.css'
 import {Link} from "react-router-dom";
-
+import {Outlet} from "react-router-dom";
 
 const User = ({user}) => {
     const {id,name} = user;
@@ -15,6 +15,7 @@ const User = ({user}) => {
                     <button>Albums</button>
                 </Link>
             </div>
+            <Outlet/>
         </div>
     );
 };
