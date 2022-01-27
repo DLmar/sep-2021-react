@@ -14,7 +14,7 @@ const UserDetailsPage = ({post}) => {
             setUser(state)
             return
         }
-        usersService.getById(id).then(value => setUser(...{value}))
+        usersService.getById(id).then(value => setUser({...value}))
     },[id])
     return (
         <div>
@@ -40,7 +40,7 @@ const UserDetailsPage = ({post}) => {
                         <p className={css.xd}>Bs : {user.company.bs}</p>
 
                         <div className={css.xxx}>
-                            <Link to={`${id.toString()}/posts`}>
+                            <Link to={'posts'}>
                                 <button className={css.btn}>Posts</button>
                             </Link>
                         </div>

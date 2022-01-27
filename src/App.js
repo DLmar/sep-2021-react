@@ -14,13 +14,13 @@ function App() {
                     <Route path={'users'} element={<UsersPage/>}>
 
                         <Route path={':id'} element={<UserDetailsPage/>}>
-                               <Route path={':id/posts'} element={<UserPostsPage/>}/>
+                               <Route path={'posts'} element={<UserPostsPage/>}/>
                         </Route>
 
                         <Route  path={':id/albums'} element={<AlbumsPage/>}>
                            <Route path={':albumId/photos'} element={<PhotosPage/>}/>
-
                         </Route>
+
                     </Route>
 
                     <Route path={'posts'} element={<PostsPage/>}>

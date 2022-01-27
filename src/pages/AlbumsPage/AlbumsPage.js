@@ -1,10 +1,34 @@
-import React from 'react';
-import {Outlet} from 'react-router-dom'
+import React, {useEffect, useState} from 'react';
+import {Link, Outlet, useLocation, useParams} from 'react-router-dom'
+import css from '../UserDetailsPage/UsersDetailsPage.module.css'
+import {albumsService} from "../../services/albums.service";
 
 const AlbumsPage = () => {
+    const {id} = useParams()
+    const [albums,setAlbums] = useState(null);
+
+    const state = useLocation();
+
+    useEffect(()=>{
+        if (state){
+            setAlbums(state)
+            return
+        }
+        albumsService.getAlbums(id).then(value => setAlbums({...value}))
+    },[id])
+console.log(albums)
     return (
         <div>
-            AlbumsPage
+            {albums && (
+                <div>
+                    <b>Id: {albums.id}</b>
+                    <p>UserId: {albums.userId}</p>
+                    <p>Title: {albums.title}</p>
+                    <Link to={'photos'}>
+                        <button className={css.btn}>Photos</button>
+                    </Link>
+                </div>
+            )}
             <Outlet/>
         </div>
     );

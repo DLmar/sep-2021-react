@@ -1,8 +1,8 @@
 import {Link, Outlet, useLocation, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 
+import css from '../UserDetailsPage/UsersDetailsPage.module.css'
 import {postsService} from "../../services/posts.service";
-import {usersService} from "../../services/users.service";
 const PostsDetailsPage = () => {
 
     const {id} = useParams();
@@ -15,22 +15,25 @@ const PostsDetailsPage = () => {
             setPost(state)
             return
         }
-        postsService.getById(id).then(value => setPost(...{value}))
+        postsService.getById(id).then(value => setPost({...value}))
     },[id])
+
     return (
         <div>
             {post && (
                 <div>
                     <h4>Id: {post.id}</h4>
                     <p>UserId: {post.userId}</p>
-                    <i>Email: {post.title}</i>
+                    <i>Title: {post.title}</i>
                     <p>Body: {post.body}</p>
-                    <Link path to={id.toString()} state={post}>
-                        <button>Comments</button>
-                    </Link>
+
+                    <div>
+                        <Link to={'comments'}>
+                            <button className={css.btn}>Comments</button>
+                        </Link>
+                    </div>
                 </div>
-            )
-            }
+            )}
             <Outlet/>
         </div>
     );
