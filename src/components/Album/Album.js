@@ -1,9 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import css from "../../pages/UserDetailsPage/UsersDetailsPage.module.css";
 
 
-const Album = ({album}) => {
+
+const Album = ({album,albumId}) => {
     const [id,userId,title]=album
     return (
         <div>

@@ -15,7 +15,6 @@ const User = ({user}) => {
                     <button>Albums</button>
                 </Link>
             </div>
-            <Outlet/>
         </div>
     );
 };
